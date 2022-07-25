@@ -1,0 +1,80 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: lightblue;
+  height: 100vh;
+  font-size: 14px;
+  font-family: sans-serif,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.circle{
+  width : 29px;
+  height : 29px;
+  line-height: 25px;
+  background-color : green;
+  color: white;
+  border-radius : 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.stemWrapper{
+  display: flex;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepBlock{
+  width: 95px;
+}
+
+.stepBlock .circlewrapper{
+  padding: 0px 20px;
+  position: relative;
+  text-align: -webkit-center;
+}
+
+.selected .circle{
+  color: black;
+  background-color: white;
+  border-color: green;
+}
+
+.stepBlock:not(:last-child) .circlewrapper::after{
+  content: '';
+  width: 82px;
+  height: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: green;
+  margin: auto;
+  z-index: -1;
+}
+
+.stepBlock:not(:last-child) > .circlewrapper::after{
+height: 5px;
+}
+ 
+.stepBlock:not(:last-child).selected >.circlewrapper::after, .stepBlock:not(:last-child).selected ~ .stepBlock:not(:last-child) >.circlewrapper::after{
+  height: 2px;
+  }
+
+.primary_button{
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+}
